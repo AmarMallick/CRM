@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F5C433B-6C43-425D-A419-109DAAB4DC15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Staffing.DAL</RootNamespace>
+    <AssemblyName>Staffing.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\Address.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Bill.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BillPayment.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BillPaymentDocument.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\BillTimeSheetDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Budget.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Company.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CompanyAddress.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CompanyContact.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\CompanyDocument.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Document.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Employee.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeAddress.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeBalancePay.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeDocumentDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeFinanceBenefit.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeFinanceDeal.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeFromVendor.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeProjectRate.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeQualificationDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeSalary.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\EmployeeSkill.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Invoice.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\InvoiceFollowUpDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\InvoicePayment.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\InvoicePaymentDocument.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\LOVItem.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\LOVItemValue.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Menu.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\MenuActivity.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\MenuActivityPermission.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PayCycle.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Payment.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PaymentSetting.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PayRoll.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\PayRollTimeSheetDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Project.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProjectDocument.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProjectLocation.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProjectSetting.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Requisition.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\RequisitionApproval.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\RequisitionDetail.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StaffingDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffingDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StaffingDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\StaffingDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffingDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TimeSheet.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TimeSheetAlert.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TimeSheetDocument.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\TimeSheetEntry.cs">
+      <DependentUpon>StaffingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mappers\MapperExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CompanyRepository.cs" />
+    <Compile Include="Repositories\ConsultantRepository.cs" />
+    <Compile Include="Repositories\LOVRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DataModel\StaffingDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StaffingDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\StaffingDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StaffingDB.edmx</DependentUpon>
+      <LastGenOutput>StaffingDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModel\StaffingDB.edmx.diagram">
+      <DependentUpon>StaffingDB.edmx</DependentUpon>
+    </None>
+    <None Include="DataModel\StaffingDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StaffingDB.edmx</DependentUpon>
+      <LastGenOutput>StaffingDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Staffing.Core\Staffing.Core.csproj">
+      <Project>{0c465a52-eb32-4d50-97c2-1146c7b66b3a}</Project>
+      <Name>Staffing.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

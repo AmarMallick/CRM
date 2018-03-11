@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="119ae2c56c9e41209261de08a33875d4" Name="Diagram1">
+        <EntityTypeShape EntityType="Staffing.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Address" Width="1.5" PointX="5.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.AspNetRole" Width="1.5" PointX="6" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.AspNetUserClaim" Width="1.5" PointX="10.5" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.AspNetUserLogin" Width="1.5" PointX="10.5" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.AspNetUser" Width="1.5" PointX="8.25" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Bill" Width="1.5" PointX="7.5" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.BillPayment" Width="1.5" PointX="15.75" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.BillPaymentDocument" Width="1.5" PointX="7.5" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.BillTimeSheetDetail" Width="1.5" PointX="15.75" PointY="55.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Budget" Width="1.5" PointX="5.25" PointY="49.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Company" Width="1.5" PointX="5.25" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.CompanyAddress" Width="1.5" PointX="7.5" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.CompanyContact" Width="1.5" PointX="10.5" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Document" Width="1.5" PointX="5.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Employee" Width="1.5" PointX="5.25" PointY="65.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeAddress" Width="1.5" PointX="7.5" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeDocumentDetail" Width="1.5" PointX="10.5" PointY="67" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeFinanceBenefit" Width="1.5" PointX="13.5" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeFinanceDeal" Width="1.5" PointX="13.5" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeFromVendor" Width="1.5" PointX="10.5" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeProjectRate" Width="1.5" PointX="18" PointY="64.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeQualificationDetail" Width="1.5" PointX="13.5" PointY="56.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeSalary" Width="1.5" PointX="7.5" PointY="85.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.EmployeeSkill" Width="1.5" PointX="10.5" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Invoice" Width="1.5" PointX="18" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.InvoiceFollowUpDetail" Width="1.5" PointX="20.25" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.InvoicePayment" Width="1.5" PointX="20.25" PointY="71.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.InvoicePaymentDocument" Width="1.5" PointX="10.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.LOVItem" Width="1.5" PointX="0.75" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.LOVItemValue" Width="1.5" PointX="3" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Menu" Width="1.5" PointX="6" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.MenuActivity" Width="1.5" PointX="8.25" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.MenuActivityPermission" Width="1.5" PointX="10.5" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.PayCycle" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Payment" Width="1.5" PointX="5.25" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.PaymentSetting" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Project" Width="1.5" PointX="15.75" PointY="59.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.ProjectDocument" Width="1.5" PointX="21" PointY="61.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.ProjectLocation" Width="1.5" PointX="21" PointY="57.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.ProjectSetting" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.Requisition" Width="1.5" PointX="5.25" PointY="82.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.RequisitionApproval" Width="1.5" PointX="13.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.RequisitionDetail" Width="1.5" PointX="10.5" PointY="75.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.sysdiagram" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.TimeSheet" Width="1.5" PointX="21" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.TimeSheetAlert" Width="1.5" PointX="23.25" PointY="66.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.TimeSheetDocument" Width="1.5" PointX="23.25" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Staffing.TimeSheetEntry" Width="1.5" PointX="26.25" PointY="60.375" IsExpanded="true" />
+        <AssociationConnector Association="Staffing.FK_CompanyAddress_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeAddress_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_ProjectLocation_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_MenuActivityPermission_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Bill_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Bill_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Bill_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Bill_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Bill_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillPayment_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillTimeSheetDetails_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillPayment_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillPaymentDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillPaymentDocument_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_BillTimeSheetDetails_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Budget_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Budget_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Budget_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Budget_LOVItemValue3" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Company_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_CompanyAddress_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_CompanyContact_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFromVendor_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_LOV_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Project_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_CompanyContact_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Project_CompanyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Document_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeDocumentDetail_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_InvoicePaymentDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_ProjectDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheetDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Employee_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Employee_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeAddress_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeDocumentDetail_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFinanceBenefit_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFinanceDeal_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFromVendor_EmployeeFromVendor" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeProjectRate_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeQualificationDetail_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeSalary_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeSkills_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Invoice_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Project_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionApproval_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheet_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeDocumentDetail_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFinanceBenefit_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeFinanceDeal_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeProjectRate_EmployeeFinanceDeal" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeProjectRate_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeQualificationDetail_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeQualificationDetail_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeQualificationDetail_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_EmployeeSkills_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Invoice_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Invoice_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_InvoiceFollowUpDetail_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_InvoicePayment_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_InvoicePayment_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_InvoicePaymentDocument_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_LOVItemValue_LOVItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_LOVItemValue_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_MenuActivity_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Payment_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Requisition_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Requisition_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionApproval_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue3" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue4" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_LOVItemValue5" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheet_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheetEntry_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_Menu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_MenuActivity_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_MenuActivityPermission_MenuActivityPermission" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_ProjectDocument_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_ProjectLocation_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheet_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionApproval_Requisition" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_RequisitionDetails_Requisition" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheetAlert_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheetDocument_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.FK_TimeSheetEntry_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Staffing.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

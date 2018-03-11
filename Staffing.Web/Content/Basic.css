@@ -1,0 +1,50 @@
+﻿/*body {
+  background-color: #f8f8f8;
+}
+#wrapper {
+  width: 100%;
+}
+#page-wrapper {
+  padding: 0 15px;
+  min-height: 568px;
+  background-color: white;
+}*/
+@media (min-width: 768px) {
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid #e7e7e7;
+  }
+}
+
+.login-panel {
+  margin-top: 25%;
+}
+    @media screen and (min-width: 768px) {
+        .modal-dialog {
+            width: 700px; /* New width for default modal */
+        }
+
+        .modal-sm {
+            width: 350px; /* New width for small modal */
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .modal-lg {
+            width: 1300px; /* New width for large modal */
+        }
+    }
+
+    /*.verticalLine {
+        border-left: thick solid #1E90FF;
+    }*/
+
+    .field-validation-error {
+        color: red;
+    }
+    .close-btn{
+	float: right;
+	background: url("images/close-btn.jpg") !important;
+}

@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffing.Web", "Staffing.Web\Staffing.Web.csproj", "{62B15BA6-2564-41DC-85E1-9B0DCCEC82F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffing.DAL", "Staffing.DAL\Staffing.DAL.csproj", "{8F5C433B-6C43-425D-A419-109DAAB4DC15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffing.Core", "Staffing.Core\Staffing.Core.csproj", "{0C465A52-EB32-4D50-97C2-1146C7B66B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffing.Infrastructure", "Staffing.Infrastructure\Staffing.Infrastructure.csproj", "{58E7551F-82C9-413D-94EF-8AE5497D0619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staffing.BusinessService", "Staffing.BusinessService\Staffing.BusinessService.csproj", "{779C9DE5-49F5-48FB-BCC8-9686BC7AA0AF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.100.75:8080/tfs/staffing
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Staffing.Web\\Staffing.Web.csproj
+		SccProjectName1 = Staffing.Web
+		SccLocalPath1 = Staffing.Web
+		SccProjectUniqueName2 = Staffing.DAL\\Staffing.DAL.csproj
+		SccProjectName2 = Staffing.DAL
+		SccLocalPath2 = Staffing.DAL
+		SccProjectUniqueName3 = Staffing.Core\\Staffing.Core.csproj
+		SccProjectName3 = Staffing.Core
+		SccLocalPath3 = Staffing.Core
+		SccProjectUniqueName4 = Staffing.Infrastructure\\Staffing.Infrastructure.csproj
+		SccProjectName4 = Staffing.Infrastructure
+		SccLocalPath4 = Staffing.Infrastructure
+		SccProjectUniqueName5 = Staffing.BusinessService\\Staffing.BusinessService.csproj
+		SccProjectName5 = Staffing.BusinessService
+		SccLocalPath5 = Staffing.BusinessService
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62B15BA6-2564-41DC-85E1-9B0DCCEC82F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B15BA6-2564-41DC-85E1-9B0DCCEC82F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B15BA6-2564-41DC-85E1-9B0DCCEC82F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B15BA6-2564-41DC-85E1-9B0DCCEC82F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5C433B-6C43-425D-A419-109DAAB4DC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5C433B-6C43-425D-A419-109DAAB4DC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5C433B-6C43-425D-A419-109DAAB4DC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5C433B-6C43-425D-A419-109DAAB4DC15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C465A52-EB32-4D50-97C2-1146C7B66B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C465A52-EB32-4D50-97C2-1146C7B66B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C465A52-EB32-4D50-97C2-1146C7B66B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C465A52-EB32-4D50-97C2-1146C7B66B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E7551F-82C9-413D-94EF-8AE5497D0619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E7551F-82C9-413D-94EF-8AE5497D0619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E7551F-82C9-413D-94EF-8AE5497D0619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E7551F-82C9-413D-94EF-8AE5497D0619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779C9DE5-49F5-48FB-BCC8-9686BC7AA0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779C9DE5-49F5-48FB-BCC8-9686BC7AA0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779C9DE5-49F5-48FB-BCC8-9686BC7AA0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779C9DE5-49F5-48FB-BCC8-9686BC7AA0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e6714398a23643d28311cbc377d4bd4c" Name="Diagram1" ZoomLevel="79">
+        <EntityTypeShape EntityType="Model.Address" Width="1.5" PointX="5.25" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Bill" Width="1.5" PointX="7.5" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BillPayment" Width="1.5" PointX="15.75" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BillPaymentDocument" Width="1.5" PointX="10.5" PointY="78.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BillTimeSheetDetail" Width="1.5" PointX="18.75" PointY="76" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Budget" Width="1.5" PointX="5.25" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Company" Width="1.5" PointX="5.25" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CompanyAddress" Width="1.5" PointX="7.5" PointY="64.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CompanyContact" Width="1.5" PointX="10.5" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Document" Width="1.5" PointX="5.25" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="5.25" PointY="74.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeAddress" Width="1.5" PointX="13.5" PointY="76.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeBalancePay" Width="1.5" PointX="7.5" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeDocumentDetail" Width="1.5" PointX="13.5" PointY="70.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeFinanceBenefit" Width="1.5" PointX="13.5" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeFinanceDeal" Width="1.5" PointX="16.5" PointY="70.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeFromVendor" Width="1.5" PointX="10.5" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeProjectRate" Width="1.5" PointX="21" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeQualificationDetail" Width="1.5" PointX="16.5" PointY="75.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSalary" Width="1.5" PointX="7.5" PointY="96.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EmployeeSkill" Width="1.5" PointX="13.5" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Invoice" Width="1.5" PointX="21" PointY="67" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InvoiceFollowUpDetail" Width="1.5" PointX="23.25" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InvoicePayment" Width="1.5" PointX="23.25" PointY="80.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InvoicePaymentDocument" Width="1.5" PointX="10.5" PointY="82.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOVItem" Width="1.5" PointX="0.75" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOVItemValue" Width="1.5" PointX="3" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Menu" Width="1.5" PointX="8" PointY="59.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MenuActivity" Width="1.5" PointX="10.25" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MenuActivityPermission" Width="1.5" PointX="12.5" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayCycle" Width="1.5" PointX="14.25" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Payment" Width="1.5" PointX="5.25" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PaymentSetting" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayRoll" Width="1.5" PointX="16.5" PointY="63.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PayRollTimeSheetDetail" Width="1.5" PointX="26.25" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Project" Width="1.5" PointX="18.75" PointY="68" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProjectDocument" Width="1.5" PointX="24" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProjectLocation" Width="1.5" PointX="24" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ProjectSetting" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Requisition" Width="1.5" PointX="5.25" PointY="91.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RequisitionApproval" Width="1.5" PointX="7.5" PointY="83.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RequisitionDetail" Width="1.5" PointX="13.5" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TimeSheet" Width="1.5" PointX="24" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TimeSheetAlert" Width="1.5" PointX="26.25" PointY="78.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TimeSheetDocument" Width="1.5" PointX="26.25" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TimeSheetEntry" Width="1.5" PointX="29.25" PointY="69.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_CompanyAddress_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeAddress_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProjectLocation_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bill_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bill_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bill_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bill_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bill_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillPayment_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillTimeSheetDetails_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillPayment_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillPaymentDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillPaymentDocument_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BillTimeSheetDetails_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Budget_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Budget_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Budget_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Budget_LOVItemValue3" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Company_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CompanyAddress_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CompanyContact_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFromVendor_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LOV_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Project_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CompanyContact_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Project_CompanyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Document_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeDocumentDetail_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoicePaymentDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProjectDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheetDocument_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employee_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Employee_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeAddress_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeBalancePay_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeDocumentDetail_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFinanceBenefit_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFinanceDeal_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFromVendor_EmployeeFromVendor" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeProjectRate_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeQualificationDetail_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeSalary_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeSkills_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Invoice_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayRoll_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Project_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionApproval_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheet_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeDocumentDetail_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFinanceBenefit_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeFinanceDeal_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeProjectRate_EmployeeFinanceDeal" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeProjectRate_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeQualificationDetail_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeQualificationDetail_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeQualificationDetail_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EmployeeSkills_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Invoice_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Invoice_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoiceFollowUpDetail_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoicePayment_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoicePayment_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InvoicePaymentDocument_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LOVItemValue_LOVItem" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LOVItemValue_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MenuActivity_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Payment_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayRoll_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Requisition_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Requisition_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionApproval_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue3" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue4" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_LOVItemValue5" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheet_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheetEntry_LOVItemValue" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MenuActivity_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MenuActivityPermission_MenuActivityPermission" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayRoll_PayCycle" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayRollTimeSheetDetail_PayRoll" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PayRollTimeSheetDetail_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProjectDocument_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProjectLocation_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheet_Project" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionApproval_Requisition" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_RequisitionDetails_Requisition" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheetAlert_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheetDocument_TimeSheet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TimeSheetEntry_TimeSheet" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.CompanyDocument" Width="1.5" PointX="16.5" PointY="59.875" />
+        <AssociationConnector Association="Model.FK_CompanyDocument_Company" />
+        <AssociationConnector Association="Model.FK_CompanyDocument_Document" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

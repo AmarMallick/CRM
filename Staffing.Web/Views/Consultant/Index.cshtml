@@ -1,0 +1,407 @@
+﻿@model Staffing.BusinessService.ViewModel.ConsultantViewModel
+<script src="~/Scripts/jquery-2.1.3.min.js"></script>
+<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="#">@ViewBag.Title</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">@ViewBag.Title</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" id="search" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button type="button" id="btnSearch" class="btn btn-primary">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" id="btnAddConsultant" class="btn btn-primary pull-right">Add New Menu</button>
+                        </div>
+                    </div>
+                    <br />
+                    <table id="Consultantgrid"></table>
+
+
+                    <div class="modal fade" id="editConsultantPopUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content" style="border-left: thick solid #1E90FF;">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close-btn float-right" data-dismiss="modal" aria-label="Close"><img src="~/Images/close-btn.jpg" /></button>
+                                    <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="row-fluid">
+
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tabConsultantContent" data-toggle="tab">Consultant</a></li>
+                                            <li><a href="#tabPaymentInfoContent" id="#tabPaymentInfo" data-toggle="tab">PaymentInfo</a></li>
+                                            <li><a href="#tabDocumentsContent" id="#tabDocuments" data-toggle="tab">Documents</a></li>
+                                            <li><a href="#tabFinanceContent" id="#tabFinance" data-toggle="tab">Finance</a></li>
+                                            <li><a href="#tabContractsContent" id="#tabContracts" data-toggle="tab">Contracts</a></li>
+                                        </ul>
+                                        <div class="panel with-nav-tabs panel-default" style="border-top:none; border-radius:0;">
+                                            <div class="panel-body">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade in active" id="tabConsultantContent">
+
+                                                        <div id="editCunsultantDiv">
+                                                            <fieldset>
+                                                                <legend>Consultant Type</legend>
+                                                                <div class="form-group-lg">
+                                                                    <div class="col-lg-3">
+                                                                        Consultant Type
+
+                                                                    </div>
+                                                                    @foreach (var item in Model.ConsultantType)
+                                                                    {
+                                                                        <div class="col-lg-3">
+                                                                            @Html.RadioButtonFor(m => m.Id, item.ItemId)
+                                                                            @Html.Label(item.ItemValue, new { })
+                                                                        </div>
+
+                                                                    }
+                                                                </div>
+                                                            </fieldset>
+                                                            <fieldset>
+                                                                <legend>Personal Information</legend>
+                                                                @Html.HiddenFor(m => m.Id, htmlAttributes: new { @id = "hdnContactId" })
+                                                                <div class="form-group">
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.VendorId, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.DropDownListFor(m => m.VendorId, new SelectList(Model.Vendors, "Id", "Name"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlContactType" })
+
+                                                                            @Html.ValidationMessageFor(model => model.VendorId)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { @class = "form-control", @id = "txtContactName" })
+                                                                            @Html.ValidationMessageFor(model => model.FirstName)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.LastName, htmlAttributes: new { @class = "form-control", @id = "txtContactEmail" })
+                                                                            @Html.ValidationMessageFor(model => model.LastName)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.EmailId, htmlAttributes: new { @class = "form-control", @id = "txtContactPhone" })
+                                                                            @Html.ValidationMessageFor(model => model.EmailId)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.ContactNo, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.ContactNo)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.HomePhone, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.HomePhone, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.HomePhone)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.SSN, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.SSN, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.SSN)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.LegalStatusId, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.DropDownListFor(m => m.EmploymentTypeId, new SelectList(Model.LegalStatus, "Id", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlContactType" })
+
+                                                                            @Html.ValidationMessageFor(model => model.LegalStatusId)
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.VisaExpirationDate, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.VisaExpirationDate, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.VisaExpirationDate)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.TotalExperience, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.TotalExperience, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.TotalExperience)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.PrimarySkills, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.PrimarySkills, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.PrimarySkills)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.ConsultantClassificationID, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.DropDownListFor(m => m.EmploymentTypeId, new SelectList(Model.ConsultantClassification, "Id", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlContactType" })
+
+                                                                            @Html.ValidationMessageFor(model => model.EmploymentTypeId)
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.EmploymentType, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+
+                                                                            @Html.DropDownListFor(m => m.EmploymentTypeId, new SelectList(Model.EmploymentType, "Id", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlContactType" })
+
+                                                                            @Html.ValidationMessageFor(model => model.EmploymentTypeId)
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-lg-4 ">
+                                                                            <div class="pull-right">
+                                                                                @Html.LabelFor(model => model.Feedback, htmlAttributes: new { @class = "control-label" })
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-8">
+                                                                            @Html.TextBoxFor(model => model.Feedback, htmlAttributes: new { @class = "form-control", @id = "txt" })
+                                                                            @Html.ValidationMessageFor(model => model.Feedback)
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </fieldset>
+
+                                                            <fieldset>
+                                                                <legend>Master Degree Information</legend>
+
+                                                            </fieldset>
+
+                                                            <fieldset>
+                                                                <legend>Bachelor's Degree Information</legend>
+
+                                                            </fieldset>
+                                                            <fieldset>
+                                                                <legend>School Information</legend>
+
+                                                            </fieldset>
+
+                                                            <fieldset>
+                                                                <legend> Upload Resume</legend>
+                                                                <div class="form-group">
+                                                                    <div class="col-lg-4 ">
+                                                                        <div class="pull-right">
+                                                                            <label class="control-label">Meta Data</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-8">
+                                                                        <input type="text" class="form-control" id="txtMetaData" />
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-lg-4 ">
+                                                                        <div class="pull-right">
+                                                                            <label class="control-label">File Upload</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-8">
+                                                                        <input type="file" class="btn btn-default" id="fileUpload"  />
+                                                                        <input type="button" class="btn btn-primary" value="UploadFile" id="btnUpload" />
+                                                                    </div>
+
+                                                                </div>
+                                                                <table id="FileUploadgrid"></table>
+                                                            </fieldset>
+
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!--Tab 1 Content end---------------------->
+                                                    <!--Tab 1 Content end---------------------->
+
+                                                    <div class="clear"></div>
+
+                                                    <!--Tab 2 Content start-->
+                                                    <div class="tab-pane fade in" id="tabPaymentInfoContent">
+
+
+                                                    </div>
+                                                    <!--Tab 2 Content end---------------------->
+
+                                                    <div class="clear"></div>
+
+                                                    <!--Tab 3 Content start-->
+                                                    <div class="tab-pane fade in" id="tabDocumentsContent">
+
+                                                    </div>
+                                                    <!--Tab 3 Content end---------------------->
+                                                    <!--Tab 4 Content start-->
+                                                    <div class="tab-pane fade in" id="tabFinanceContent">
+
+                                                    </div>
+                                                    <!--Tab 4 Content end---------------------->
+                                                    <!--Tab 5 Content start-->
+                                                    <div class="tab-pane fade in" id="tabContractsContent">
+
+                                                    </div>
+                                                    <!--Tab 5 Content end---------------------->
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+
+    function AddConsultant() {
+        debugger;
+        $('#editCunsultantDiv input[type="text"]').val('');
+        $('#editConsultantPopUp').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        //$('#btnUpdate').hide();
+        // $('#btnSave').show();
+
+    }
+
+    $('#btnAddConsultant').on("click", AddConsultant);
+
+    $('#btnUpload').click(function () {
+
+        if (window.FormData !== undefined) {
+
+            var fileUpload = $("#fileUpload").get(0);
+            var files = fileUpload.files;
+
+            // Create FormData object  
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object  
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+
+            var data, grid;
+            data = [
+                { 'ID': 1, 'Name': 'Hristo Stoichkov', 'PlaceOfBirth': 'Plovdiv, Bulgaria' },
+                { 'ID': 2, 'Name': 'Ronaldo Luis Nazario de Lima', 'PlaceOfBirth': 'Rio de Janeiro, Brazil' },
+                { 'ID': 3, 'Name': 'David Platt', 'PlaceOfBirth': 'Chadderton, Lancashire, England' }
+            ];
+            grid = $('#grid').grid({
+                dataSource: data,
+                columns: [{ field: 'ID' }, { field: 'Name' }, { field: 'PlaceOfBirth' }],
+                uiLibrary: 'bootstrap',
+                pager: { limit: 2, sizes: [2, 5, 10] }
+            });
+
+
+        }
+    });
+
+
+</script>

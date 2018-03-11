@@ -1,0 +1,80 @@
+﻿@model Staffing.BusinessService.ViewModel.MenuVM
+<div id="editForm" style="display:none">
+    @using (Ajax.BeginForm("Save", "Menu", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "editForm" }, new { id = "addEditMenuForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m => m.menuViewModel.Id, new { @id="Id"})
+        <div class="form-group">
+            <label for="Name" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.menuViewModel.Name, new { @class = "form-control", @id = "Name" })
+                @Html.ValidationMessageFor(m => m.menuViewModel.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="DisplayName" class="col-sm-3 control-label">Display</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.menuViewModel.DisplayName, new { @class = "form-control", @id = "DisplayName" })
+                @Html.ValidationMessageFor(m => m.menuViewModel.DisplayName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ParentId" class="col-sm-3 control-label">Parent</label>
+            <div class="col-sm-9">
+                @*@Html.DropDownList("ParentId", new SelectList(Model.menuList, "Id", "Name"), new { @class = "form-control" })*@
+                @Html.DropDownListFor(m => m.menuViewModel.ParentId, new SelectList(Model.menuList, "Id", "Name"), new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="LinkUrl" class="col-sm-3 control-label">Link</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.menuViewModel.LinkUrl, new { @class = "form-control", @id = "LinkUrl" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ImageUrl" class="col-sm-3 control-label">Image</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.menuViewModel.ImageUrl, new { @class = "form-control", @id = "ImageUrl" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ImageUrl" class="col-sm-3 control-label">Display Order</label>
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.menuViewModel.DisplayOrder, new { @class = "form-control", @id="DisplayOrder" })
+            </div>
+        </div>
+        @*<div class="form-group">
+            <label for="PlaceOfBirth" class="col-sm-3 control-label">Date Added</label>
+            <div class="col-sm-9">
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" id="CreatedDate">
+                </div>
+            </div>
+        </div>*@
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m=>m.menuViewModel.IsActive) Active
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" id="btnSave" class="btn btn-primary">Save</button>
+                <!--Clear validation and the form from:-->
+                <!-- a reset input, this handles the the form reset but not validation clearing-->
+                <input type="reset" value="Reset" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">&nbsp;</div>
+        </div>
+    }
+</div>
+

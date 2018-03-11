@@ -1,0 +1,843 @@
+﻿@model Staffing.BusinessService.ViewModel.CompanyViewModel
+
+<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="#">Menus</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">@ViewBag.Title</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" id="search" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button type="button" id="btnSearch" class="btn btn-primary">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <button type="button" id="btnAddCompany" class="btn btn-primary pull-right">Add New Menu</button>
+                        </div>
+                    </div>
+                    <br />
+                    <table id="grid"></table>
+                    <div class="modal fade" id="editCompanyForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content" style="border-left: thick solid #1E90FF;">
+
+                                <div class="modal-header">
+                                        <button type="button" class="close-btn " onclick="Close()" aria-label="Close"><img src="~/Images/close-btn.jpg" /></button>
+                                    
+                                   
+                                    <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="row-fluid">
+
+
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab1default" data-toggle="tab">Clients</a></li>
+                                            <li><a href="#tab2default" id="contactTab" data-toggle="tab">Contact</a></li>
+                                            <li><a href="#tab3default" id="masterAgreementTab" data-toggle="tab">Master Agreement</a></li>
+                                        </ul>
+                                        <div class="panel with-nav-tabs panel-default" style="border-top:none; border-radius:0;">
+                                            <div class="panel-body">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade in active" id="tab1default">
+                                                        <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 20px;">
+
+                                                            @using (Html.BeginForm(null, null, null, FormMethod.Post, new { @id = "CompanyForm" }))
+                                                            {
+                                                                <div id="modalDiv">
+
+
+                                                                    <fieldset>
+                                                                        <legend>@ViewBag.Title</legend>
+                                                                        @Html.HiddenFor(m => m.Id, htmlAttributes: new { @id = "hdnId" })
+                                                                        <div class="form-group">
+                                                                            <div class="form-group">
+                                                                                <div class="col-lg-4 ">
+                                                                                    <div class="pull-right">
+                                                                                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div class="col-lg-8">
+                                                                                    @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @class = "form-control", @id = "txtName" })
+                                                                                    @Html.ValidationMessageFor(model => model.Name)
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="col-lg-4 ">
+                                                                                    <div class="pull-right">
+                                                                                        @Html.LabelFor(model => model.WebSite, htmlAttributes: new { @class = "control-label" })
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-8">
+                                                                                    @Html.TextBoxFor(model => model.WebSite, htmlAttributes: new { @class = "form-control", @id = "txtWebSite" })
+                                                                                    @Html.ValidationMessageFor(model => model.WebSite)
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="col-lg-4 ">
+                                                                                    <div class="pull-right">
+                                                                                        @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "control-label" })
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-8">
+                                                                                    @Html.TextBoxFor(model => model.EmailId, htmlAttributes: new { @class = "form-control", @id = "txtEmailID" })
+                                                                                    @Html.ValidationMessageFor(model => model.EmailId)
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="col-lg-4 ">
+                                                                                    <div class="pull-right">
+                                                                                        @Html.LabelFor(model => model.WorkPhone, htmlAttributes: new { @class = "control-label" })
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-8">
+                                                                                    @Html.TextBoxFor(model => model.WorkPhone, htmlAttributes: new { @class = "form-control", @id = "txtWorkPhone" })
+                                                                                    @Html.ValidationMessageFor(model => model.WorkPhone)
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <div class="col-lg-4 ">
+                                                                                    <div class="pull-right">
+                                                                                        @Html.LabelFor(model => model.Fax, htmlAttributes: new { @class = "control-label" })
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-8">
+                                                                                    @Html.TextBoxFor(model => model.Fax, htmlAttributes: new { @class = "form-control", @id = "txtFax" })
+                                                                                    @Html.ValidationMessageFor(model => model.Fax)
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </fieldset>
+
+                                                                    <fieldset>
+                                                                        <legend>Location</legend>
+
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.Address1, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                @Html.TextBoxFor(model => model.Address1, htmlAttributes: new { @class = "form-control", @id = "txtAddress1" })
+                                                                                @Html.ValidationMessageFor(model => model.Address1)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.Address2, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                @Html.TextBoxFor(model => model.Address2, htmlAttributes: new { @class = "form-control", @id = "txtAddress2" })
+                                                                                @Html.ValidationMessageFor(model => model.Address2)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                @Html.TextBoxFor(model => model.City, htmlAttributes: new { @class = "form-control", @id = "txtCity" })
+                                                                                @Html.ValidationMessageFor(model => model.City)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+
+                                                                                @Html.DropDownListFor(model => model.Country, new SelectList(Model.CountryList, "Id", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlCountry" })
+                                                                                @Html.ValidationMessageFor(model => model.Country)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                @Html.DropDownListFor(model => model.State, new SelectList(Model.StateList, "ItemValue", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @disabled = "disabled", @id = "ddlState" })
+                                                                                @Html.ValidationMessageFor(model => model.State)
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+                                                                                    @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label" })
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                @Html.TextBoxFor(model => model.ZipCode, htmlAttributes: new { @class = "form-control", @id = "txtZipCode" })
+                                                                                @Html.ValidationMessageFor(model => model.ZipCode)
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <div class="col-lg-4 ">
+                                                                                <div class="pull-right">
+
+                                                                                    <button type="button" id="btnSave" class="btn btn-primary">Save</button>
+                                                                                    <button type="button" id="btnUpdate" class="btn btn-primary" hidden="hidden">Update</button>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-8">
+                                                                                <button type="button" id="btnCancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </fieldset>
+                                                                </div>
+                                                            }
+
+
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <!--Tab 1 Content end---------------------->
+
+                                                    <div class="clear"></div>
+
+                                                    <!--Tab 2 Content start-->
+                                                    <div class="tab-pane fade in" id="tab2default">
+                                                        <div>
+                                                            <button type="button" id="btnAddCompanyContact" class="btn btn-primary pull-right">Add New Contact</button>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 20px;">
+                                                            <table id="contactGrid"></table>
+
+                                                        </div><!--All Accorion end-->
+                                                    </div>
+                                                    <!--Tab 2 Content end---------------------->
+
+                                                    <div class="clear"></div>
+
+                                                    <!--Tab 3 Content start-->
+                                                    <div class="tab-pane fade in" id="tab3default">
+                                                        <fieldset>
+                                                           
+                                                            <legend> Upload Master Agreement</legend>
+                                                            <div class="col-lg-5">
+                                                                <input type="file" id="btnAddMasterAgreement" />
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <button type="button" id="btnUpload" class="btn btn-primary">Upload</button>
+                                                                <button type="button" id="btnUploadCancel" class="btn btn-default" hidden="hidden">Cancel</button>
+                                                            </div>
+                                                        </fieldset>
+                                                        
+
+                                                       
+                                                        <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 20px;">
+                                                            <table id="MasterAgreement" style="margin-bottom: 20px;"></table>
+                                                        </div><!--All Accorion end-->
+                                                    </div>
+                                                    <!--Tab 2 Content end---------------------->
+                                                    <!--Tab 3 Content start-->
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="editCompanyContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content verticalLine">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close-btn float-right" data-dismiss="modal" aria-label="Close"><img src="~/Images/close-btn.jpg" /></button>
+                                    <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="row-fluid">
+
+                                        @using (Html.BeginForm(null, null, null, FormMethod.Post, new { @id = "CompanyContactForm" }))
+                                        {
+                                            <div id="modalDivContact">
+
+                                                <fieldset>
+                                                    <legend>Contacts</legend>
+                                                    @Html.HiddenFor(m => m.Id, htmlAttributes: new { @id = "hdnContactId" })
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+                                                                    @Html.LabelFor(model => model.companyContactViewModel.Name, htmlAttributes: new { @class = "control-label" })
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                @Html.TextBoxFor(model => model.companyContactViewModel.Name, htmlAttributes: new { @class = "form-control", @id = "txtContactName" })
+                                                                @Html.ValidationMessageFor(model => model.companyContactViewModel.Name)
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+                                                                    @Html.LabelFor(model => model.companyContactViewModel.Email, htmlAttributes: new { @class = "control-label" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                @Html.TextBoxFor(model => model.companyContactViewModel.Email, htmlAttributes: new { @class = "form-control", @id = "txtContactEmail" })
+                                                                @Html.ValidationMessageFor(model => model.companyContactViewModel.Email)
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+                                                                    @Html.LabelFor(model => model.companyContactViewModel.ContactNo, htmlAttributes: new { @class = "control-label" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                @Html.TextBoxFor(model => model.companyContactViewModel.ContactNo, htmlAttributes: new { @class = "form-control", @id = "txtContactPhone" })
+                                                                @Html.ValidationMessageFor(model => model.companyContactViewModel.ContactNo)
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+                                                                    @Html.LabelFor(model => model.companyContactViewModel.TypeId, htmlAttributes: new { @class = "control-label" })
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                @*  @Html.TextBoxFor(model => model.companyContactViewModel.TypeId, htmlAttributes: new { @class = "form-control", @id = "txt" })*@
+                                                                @Html.DropDownListFor(model => model.companyContactViewModel.TypeId, new SelectList(Model.companyContactViewModel.ContactType, "Id", "ItemValue"), "Select", htmlAttributes: new { @class = "form-control", @id = "ddlContactType" })
+                                                                @Html.ValidationMessageFor(model => model.companyContactViewModel.TypeId)
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+                                                                    @Html.LabelFor(model => model.companyContactViewModel.IsPrimary, htmlAttributes: new { @class = "control-label" })
+                                                                    @Html.CheckBoxFor(model => model.companyContactViewModel.IsPrimary, htmlAttributes: new { @id = "chkIsPrimary" })
+                                                                    @Html.ValidationMessageFor(model => model.companyContactViewModel.IsPrimary)
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                @*@Html.TextBoxFor(model => model.companyContactViewModel.IsPrimary, htmlAttributes: new { @class = "form-control", @id = "txt",@dis="" })*@
+                                                                @*@Html.CheckBoxFor(model => model.companyContactViewModel.IsPrimary, htmlAttributes: new {  @id = "chkIsPrimary" })
+                                                                    @Html.ValidationMessageFor(model => model.companyContactViewModel.IsPrimary)*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-4 ">
+                                                                <div class="pull-right">
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <button type="button" id="btnContactSave" class="btn btn-primary">Save</button>
+                                                                <button type="button" id="btnContactUpdate" class="btn btn-primary" hidden="hidden">Update</button>
+                                                                <button type="button" id="btnContactCancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </fieldset>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+@section scripts{
+    <script>
+    $(document).ready(function () {
+
+        grid = $('#grid').grid({
+            dataSource: '@Url.Content("~/Vendor/GetCompaniesByLOVItemValueID")',
+            dataKey: "Id",
+            uiLibrary: "bootstrap",
+            columns: [
+                { field: 'Id', width: 50, sortable: true, hidden: true },
+                { field: 'Name', title: 'Name', sortable: true },
+                { field: 'ContactPerson', title: 'Contact Person' },
+                { field: 'EmailId', title: 'Email' },
+                { field: 'WorkPhone', title: 'Work Phone' },
+                { field: 'WebSite', title: 'WebSite' },
+                { title: '', field: 'Edit', width: 34, type: 'icon', icon: 'glyphicon-pencil', tooltip: 'Edit', events: { 'click': Edit } },
+                { title: '', field: 'Delete', width: 34, type: 'icon', icon: 'glyphicon-remove', tooltip: 'Delete', events: { 'click': Remove } }
+            ],
+            pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+        });
+
+    });
+
+    $('#ddlCountry').change(function (e) {
+        
+        var CountryId = e.target.options[e.target.selectedIndex].value;
+       
+        var ddlStates = $("#ddlState");
+        ddlStates.removeAttr("disabled");
+        $.ajax({
+            cache: false,
+            type: "GET",
+            url: "@(Url.Content("GetStatesByCountryId"))",
+            data: { "countryId": CountryId },
+            success: function (data) {
+                
+                $('#ddlState').html('');
+                $.each(data, function (id, option) {
+                    $('#ddlState').append($('<option></option>').val(option.ItemValue).html(option.ItemValue));
+                });
+               
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retrieve states.');
+                statesProgress.hide();
+            }
+        });
+
+
+    });
+
+
+
+    function Edit(e) {
+        
+        $('#hdnId').val(e.data.record.Id);
+        $('#txtName').val(e.data.record.Name);
+        $('#txtWebSite').val(e.data.record.WebSite);
+        $('#txtEmailID').val(e.data.record.EmailId);
+        $('#txtWorkPhone').val(e.data.record.WorkPhone);
+        $('#txtFax').val(e.data.record.Fax);
+        $('#txtAddress1').val(e.data.record.Address1);
+        $('#txtAddress2').val(e.data.record.Address2);
+        $('#txtCity').val(e.data.record.City);
+        $('#ddlCountry').val(e.data.record.Country);
+        $('#ddlState').val(e.data.record.State).html(e.data.record.State);
+        $('#txtZipCode').val(e.data.record.ZipCode);
+        $('#editCompanyForm').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        $('#btnUpdate').show();
+        $('#btnSave').hide();
+
+
+    }
+
+    function Save() {
+        
+        if ($('#CompanyForm').valid()) {
+
+
+            var company = {
+                Id: $("#hdnId").val() == 1 ? 0 : $("#hdnId").val(),
+                Name: $("#txtName").val(),
+                WebSite: $("#txtWebSite").val(),
+                EmailID: $("#txtEmailID").val(),
+                WorkPhone: $("#txtWorkPhone").val(),
+                Address1: $("#txtAddress1").val(),
+                Address2: $("#txtAddress2").val(),
+                City: $("#txtCity").val(),
+                Country: $("#ddlCountry option:selected").text(),
+                State: $("#ddlState").val(),
+                ZipCode: $('#txtZipCode').val()
+
+            };
+            $.ajax({
+                url: "@Url.Content("~/Vendor/CreateUpdateCompany")",
+                type: "POST",
+                data: {
+                    companyViewModel: company
+                },
+
+
+            })
+                .done(function (result) {
+                    
+                    if (result >0) {
+                        alert("Sucess");
+                        window.location.href = window.location.href;
+                    }
+                    else {
+                        alert("Unable to Save");
+
+                    }
+                    
+                    grid.reload();
+                })
+                .fail(function () {
+                    alert("Unable to save.");
+                });
+        }
+
+        else {
+
+            return false;
+
+        }
+
+    }
+
+
+    function Remove(e) {
+        
+
+        var r = confirm('Are you sure to delete?');
+        if (r == true) {
+            $.ajax({ url: "@Url.Content("~/Vendor/DeleteCompany")", type: "POST", data: { companyId: e.data.record.Id } })
+        .done(function () {
+            grid.reload();
+        })
+        .fail(function () {
+            alert("Unable to remove.");
+        });
+        } else {
+            alert("Deleting Canceled.");
+
+        }
+
+
+    }
+
+    function Search() {
+        grid.reload({ searchString: $("#search").val() });
+    }
+
+
+
+    function Add() {
+        
+        $('#modalDiv input[type="text"]').val('');
+        $('#editCompanyForm').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        $('#btnUpdate').hide();
+        $('#btnSave').show();
+
+    }
+    $("#btnAddCompany").on("click", Add);
+    $("#btnUpdate").on("click", Save);
+    $("#btnSave").on("click", Save);
+    $("#btnSearch").on("click", Search);
+
+
+
+    $('#contactTab').click(function () {
+
+        
+
+        var companyId = $("#hdnId").val();
+        grid = $('#contactGrid').grid({
+            dataSource: '@Url.Content("GetContactByCompanyID")' + "?companyId=" + companyId,
+                dataKey: "Id",
+                uiLibrary: "bootstrap",
+                columns: [
+                    { field: 'Id', width: 50, sortable: true, hidden: true },
+                    { field: 'Name', title: 'Name', sortable: true },
+                    { field: 'Email', title: 'Email' },
+                    { field: 'ContactNo', title: 'ContactNo' },
+                    { field: 'TypeId', title: 'TypeId' },
+                    { title: '', field: 'Edit', width: 34, type: 'icon', icon: 'glyphicon-pencil', tooltip: 'Edit', events: { 'click': EditContact } },
+                    { title: '', field: 'Delete', width: 34, type: 'icon', icon: 'glyphicon-remove', tooltip: 'Delete', events: { 'click': RemoveContact } }
+                ],
+                pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+            });
+
+
+
+        });
+
+        
+
+        $('#masterAgreementTab').click(function () {
+
+            
+
+            var companyId = $("#hdnId").val();
+            grid = $('#MasterAgreement').grid({
+                dataSource: '@Url.Content("GetMasterAgreementByCompanyId")' + "?companyId=" + companyId,
+                dataKey: "Id",
+                uiLibrary: "bootstrap",
+                columns: [
+                    { field: 'Id', width: 50, sortable: true, hidden: true },
+
+                     { field: 'OriginalName', title: 'Document', sortable: true, tmpl: "<a href=\'Download?ImageName={OriginalName}\' >{OriginalName}</a>" },
+
+                    { field: 'UploadedDate', title: 'UploadedDate', type: "date" },
+                     
+                ],
+              //  pager: { enable: true, limit: 5, sizes: [2, 5, 10, 20] }
+            });
+
+
+
+        });
+      
+
+        function EditContact(e) {
+            
+            var companyContactID = e.data.record.Id;
+
+
+
+            $('#hdnContactId').val(e.data.record.Id);
+            $('#txtContactName').val(e.data.record.Name);
+            $('#txtContactEmail').val(e.data.record.Email);
+            $('#txtContactPhone').val(e.data.record.ContactNo);
+            $("#ddlContactType").val(e.data.record.TypeId);
+            $('#chkIsPrimary').val(e.data.record.IsPrimary);
+            $('#editCompanyContactForm').modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+
+            $('#btnContactUpdate').show();
+            $('#btnContactSave').hide();
+
+
+
+        }
+
+        function RemoveContact(e) {
+            
+            var r = confirm('Are you sure to delete?');
+            if (r == true) {
+                $.ajax({ url: "@Url.Content("~/Vendor/DeleteCompanyContact")", type: "POST", data: { contactId: e.data.record.Id } })
+        .done(function () {
+            grid.reload();
+        })
+        .fail(function () {
+            alert("Unable to remove.");
+        });
+        }
+        else {
+            alert("Delete Canceled");
+        }
+    }
+
+
+
+    $('#btnAddCompanyContact').on("click", AddCompanyContact);
+    $('#btnContactUpdate').on("click", SaveCompanyContact);
+    $('#btnContactSave').on("click", SaveCompanyContact);
+    $('#btnUpload').on("click", UploadMasterAgreement);
+
+    
+
+
+    function SaveCompanyContact() {
+        
+
+        if ($('#CompanyContactForm').valid()) {
+
+            var companyContact = {
+                Id: $("#hdnContactId").val(),
+                CompanyId: $("#hdnId").val() == 1 ? 0 : $("#hdnId").val(),
+
+                Name: $("#txtContactName").val(),
+                Email: $("#txtContactEmail").val(),
+                ContactNo: $("#txtContactPhone").val(),
+                TypeId: $("#ddlContactType option:selected").val(),
+                IsPrimary: $('#chkIsPrimary').prop("checked"),
+
+            };
+            $.ajax({
+                url: "@Url.Content("~/Vendor/CreateUpadateCompanyContact")",
+                type: "POST",
+                data: {
+                    companyContactViewModel: companyContact
+                },
+
+
+            })
+        .done(function (result) {
+            if (result == 1 || result == 3) {
+                
+                alert("Sucess");
+                $('#editCompanyContactForm').hide();
+                contactGrid.reload();
+                grid.reload();
+
+            }
+            else
+                alert("Fail");
+
+
+
+        })
+
+        .fail(function () {
+            alert("Unable to save.");
+        });
+
+
+        }
+
+
+
+        else {
+            return false;
+        }
+    }
+
+
+    function AddCompanyContact() {
+        $('#editCompanyContactForm').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+
+        $('#btnContactUpdate').hide();
+        $('#btnContactSave').show();
+        $('#modalDivContact input[type="text"]').val('');
+
+    }
+
+
+
+    function UploadMasterAgreement()
+    {
+        
+
+        if (window.FormData !== undefined) {  
+  
+            var fileUpload = $("#btnAddMasterAgreement").get(0);  
+            var files = fileUpload.files;  
+              
+            // Create FormData object  
+            var fileData = new FormData();  
+  
+            // Looping over all files and add it to FormData object  
+            for (var i = 0; i < files.length; i++) {  
+                fileData.append(files[i].name, files[i]);  
+            }
+
+              
+            // Adding one more key to FormData object  
+            fileData.append('companyId', $("#hdnId").val());
+            $.ajax({  
+                url: '@Url.Content("~/Vendor/AddUpdateCompanyMasterAgreement")',  
+                type: "POST",  
+                contentType: false, // Not to set any content header  
+                processData: false, // Not to process data  
+                data: fileData,  
+                success: function (result) {
+                    if (result > 0) {
+                        
+                        alert("Uploaded Sucessfully");
+                        grid.reload();
+                        $('#btnAddMasterAgreement').val('');
+                    }
+                    else {
+                        alert("Please Try AfterSome Time");
+                        $('#btnAddMasterAgreement').val('');
+                    }
+                },  
+                error: function (err) {  
+                    alert(err.statusText);
+                    $('#btnAddMasterAgreement').val('');
+                }  
+            });  
+        } else {  
+            alert("FormData is not supported.");
+            $('#btnAddMasterAgreement').val('');
+        }  
+
+    }
+
+
+        $('#btnUploadCancel').click(function () {
+
+            $('#btnAddMasterAgreement').val('');
+
+        });
+
+        function Close()
+        {
+
+
+            window.location.href = window.location.href;
+        }
+
+        $(function () {
+            $('#search').keypress(function (event) {
+                if (event.keyCode == 13) {
+                    Search();
+                }
+            });
+        });
+
+
+
+    </script>
+}
+
+
